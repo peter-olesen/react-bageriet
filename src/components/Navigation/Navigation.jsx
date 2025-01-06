@@ -25,7 +25,9 @@ export const Navigation = () => (
           <NavLink to={item.path}>{item.label}</NavLink>
         </li>
       ))}
-      <h1>bageriet</h1>
+      <h1>
+        <NavLink to={PATHS.home}>bageriet</NavLink>
+      </h1>
       {navItems.slice(2).map((item) => (
         <li key={item.id}>
           <NavLink to={item.path}>{item.label}</NavLink>
