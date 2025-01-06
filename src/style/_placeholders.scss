@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("./assets/fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("./assets/fonts/open-sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans SemiBold";
+  src: url("./assets/fonts/open-sans/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lobster";
+  src: url("./assets/fonts/lobster/Lobster 1.4.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+%OpenSans {
+  font-family: "Open Sans", sans-serif;
+}
+
+%OpenSansLight {
+  font-family: "Open Sans Light", sans-serif;
+}
+
+%OpenSansSemiBold {
+  font-family: "Open Sans SemiBold", sans-serif;
+}
+
+%Lobster {
+  font-family: "Lobster", sans-serif;
+}

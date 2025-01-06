@@ -1,19 +1,21 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import { Home } from '../pages/Home';
-import { About } from '../pages/About';
-import { Contact } from '../pages/Contact';
-import { PageNotFound } from '../pages/PageNotFound';
-import { PATHS } from './paths';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Home } from "../pages/Home";
+import { Products } from "../pages/Products";
+import { Contact } from "../pages/Contact";
+import { Login } from "../pages/Login";
+import { PageNotFound } from "../pages/PageNotFound";
+import { PATHS } from "./paths";
 
 export const Router = () => {
   const location = useLocation();
 
   useEffect(() => {
     const pageTitles = {
-      [PATHS.home]: 'React + Vite Boilerplate',
-      [PATHS.about]: 'About',
-      [PATHS.contact]: 'Contact',
+      [PATHS.home]: "Bageriet",
+      [PATHS.produkter]: "Produkter - Bageriet",
+      [PATHS.kontakt]: "Kontakt  - Bageriet",
+      [PATHS.login]: "Login  - Bageriet",
     };
 
     const currentTitle = pageTitles[location.pathname];
@@ -21,15 +23,16 @@ export const Router = () => {
     if (currentTitle) {
       document.title = currentTitle;
     } else {
-      document.title = '404 Page Not Found';
+      document.title = "404 Page Not Found";
     }
   }, [location]);
 
   return (
     <Routes>
       <Route index path={PATHS.home} element={<Home />} />
-      <Route path={PATHS.about} element={<About />} />
-      <Route path={PATHS.contact} element={<Contact />} />
+      <Route path={PATHS.produkter} element={<Products />} />
+      <Route path={PATHS.kontakt} element={<Contact />} />
+      <Route path={PATHS.login} element={<Login />} />
 
       <Route path="*" element={<PageNotFound />} />
     </Routes>

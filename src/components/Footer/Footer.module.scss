@@ -1,0 +1,45 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.FooterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+    background: $FooterBG;
+
+    .FooterTitle {
+      @extend %Lobster;
+      font-size: 48px;
+      color: $White;
+      margin-bottom: 0;
+    }
+
+    .FooterText {
+      @extend %OpenSansLight;
+      font-size: 15px;
+      color: $Gray;
+      max-width: 600px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+  }
+
+  .Copyright {
+    text-align: center;
+    background: $CopyrightBG;
+    max-height: 64px;
+    width: 100vw;
+
+    @extend %OpenSansLight;
+    font-size: 15px;
+    color: $Gray;
+  }
+}

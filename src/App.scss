@@ -1,27 +1,13 @@
-body {
-  background: #000;
-  color: #fff;
-}
+@import "./style/variables";
+@import "./style/placeholders";
 
-img {
-  width: 50%;
-  border-radius: 2rem;
+body {
+  background: #fff;
+  color: #000;
 }
 
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-
-  a {
-    color: white;
-  }
-
-  nav {
-    a {
-      margin: 1rem;
-    }
-  }
+  @extend %OpenSans;
 }
