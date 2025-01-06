@@ -1,0 +1,24 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.InfoCard {
+  width: 350px;
+  text-align: center;
+
+  h3 {
+    @extend %OpenSansSemiBold;
+    color: $Text;
+    text-transform: uppercase;
+  }
+
+  p {
+    @extend %OpenSansLight;
+    color: $Gray;
+  }
+
+  img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+  }
+}

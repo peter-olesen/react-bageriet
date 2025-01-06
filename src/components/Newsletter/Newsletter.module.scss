@@ -1,0 +1,64 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.Newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(../../assets/img/newsletterbg.jpg);
+  width: 100%;
+  height: 550px;
+
+  .NewsletterContent {
+    min-width: 1200px;
+    h3 {
+      @extend %Lobster;
+      font-size: 48px;
+      color: $White;
+      margin: 0;
+    }
+
+    p {
+      color: $White;
+      font-size: 14px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      .NewsletterIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 54px;
+        min-height: 54px;
+        background: #bbc8d4;
+
+        svg {
+          width: 13px;
+          height: 17px;
+          filter: invert(100%);
+        }
+      }
+
+      input[type="email"] {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 2rem;
+        border: none;
+        outline: none;
+      }
+
+      button {
+        width: 176px;
+        height: 54px;
+        background: #617685;
+        color: $White;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

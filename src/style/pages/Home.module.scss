@@ -1,0 +1,19 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.HomeSection {
+  text-align: center;
+  max-width: 1000px;
+  padding-bottom: 4rem;
+
+  h2 {
+    @extend %Lobster;
+    color: $Title;
+    font-size: 48px;
+  }
+
+  p {
+    @extend %OpenSansLight;
+    font-size: 18px;
+  }
+}

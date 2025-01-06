@@ -1,0 +1,8 @@
+.InfoCardSection {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1200px;
+  padding-bottom: 4rem;
+}

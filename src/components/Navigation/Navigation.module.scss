@@ -1,0 +1,32 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.Navigation {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 2rem;
+      text-transform: uppercase;
+
+      a {
+        color: $White;
+        text-decoration: none;
+      }
+    }
+
+    h1 {
+      @extend %Lobster;
+      font-size: 80px;
+      color: $White;
+      padding: 0 4rem;
+      margin: 1rem 0;
+    }
+  }
+}

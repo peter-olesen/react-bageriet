@@ -2,12 +2,12 @@
 @import "./style/placeholders";
 
 body {
-  background: #fff;
+  background: $BG;
   color: #000;
+  margin: 0 auto;
 }
 
 #root {
   width: 100%;
-  margin: 0 auto;
   @extend %OpenSans;
 }

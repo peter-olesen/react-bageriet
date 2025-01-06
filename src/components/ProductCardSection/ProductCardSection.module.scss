@@ -1,0 +1,25 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.ProductCardSection {
+  text-align: center;
+  padding-bottom: 4rem;
+  max-width: 1200px;
+
+  h2 {
+    @extend %Lobster;
+    color: $Title;
+    font-size: 48px;
+  }
+
+  p {
+    @extend %OpenSansLight;
+    font-size: 18px;
+  }
+
+  .ProductGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}

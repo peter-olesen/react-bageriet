@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
 
     background: $FooterBG;
 
@@ -36,7 +36,7 @@
     text-align: center;
     background: $CopyrightBG;
     max-height: 64px;
-    width: 100vw;
+    width: 100%;
 
     @extend %OpenSansLight;
     font-size: 15px;

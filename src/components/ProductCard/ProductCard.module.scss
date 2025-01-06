@@ -1,0 +1,34 @@
+@import "../../style/variables";
+@import "../../style/placeholders";
+
+.ProductCard {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+
+  h3 {
+    @extend %OpenSansSemiBold;
+    font-size: 18px;
+  }
+
+  p {
+    @extend %OpenSansLight;
+    font-size: 14px;
+    color: $Gray;
+  }
+
+  img {
+    width: 283px;
+    height: 219px;
+  }
+
+  button {
+    background: $BG;
+    border: 1px solid #617685;
+    color: $Black;
+    font-size: 12px;
+    width: 200px;
+    height: 43px;
+  }
+}
