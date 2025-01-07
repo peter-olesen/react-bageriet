@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
 
   .Footer {
     display: flex;
@@ -13,7 +12,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-
     background: $FooterBG;
 
     .FooterTitle {
@@ -38,7 +36,6 @@
     background: $CopyrightBG;
     max-height: 64px;
     width: 100%;
-
     @extend %OpenSansLight;
     font-size: 15px;
     color: $Gray;

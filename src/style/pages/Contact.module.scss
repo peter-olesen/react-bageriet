@@ -1,0 +1,51 @@
+@import "../variables";
+@import "../placeholders";
+
+.Contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  gap: 2rem;
+
+  p {
+    color: #999999;
+    font-size: 19px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    input {
+      width: 570px;
+      padding: 0.5rem;
+      outline: 0;
+      border: 0;
+    }
+
+    textarea {
+      resize: none;
+      height: 100%;
+      padding: 0.5rem;
+      outline: 0;
+      border: 0;
+    }
+  }
+
+  span {
+    display: flex;
+    justify-content: right;
+    button {
+      width: 129px;
+      height: 40px;
+      color: $White;
+      background: #666699;
+      outline: 0;
+      border: 0;
+    }
+  }
+}

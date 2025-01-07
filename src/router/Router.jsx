@@ -7,6 +7,7 @@ import { Login } from "../pages/Login";
 import { PageNotFound } from "../pages/PageNotFound";
 import { PATHS } from "./paths";
 import { Layout } from "../layouts/layout";
+import { CollapsedLayout } from "../layouts/CollapsedLayout";
 
 export const Router = () => {
   const location = useLocation();
@@ -31,7 +32,10 @@ export const Router = () => {
   return (
     <Routes>
       <Route path={"/"} element={<Layout />}>
-        <Route index path={PATHS.home} element={<Home />} />
+        <Route index element={<Home />} />
+      </Route>
+
+      <Route element={<CollapsedLayout />}>
         <Route path={PATHS.produkter} element={<Products />} />
         <Route path={PATHS.kontakt} element={<Contact />} />
         <Route path={PATHS.login} element={<Login />} />
