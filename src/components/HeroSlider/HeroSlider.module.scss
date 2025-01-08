@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: row;
     margin: auto;
+    width: 100%;
+    justify-content: space-between;
 
     .LeftArrow {
       background: transparent;
