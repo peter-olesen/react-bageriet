@@ -1,16 +1,20 @@
 @import "./style/variables";
 @import "./style/placeholders";
 
+html,
 body {
   background: $BG;
   color: #000;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
   box-sizing: border-box;
+  @extend %OpenSans;
+  height: 100%;
+  margin: 0;
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  @extend %OpenSans;
+  min-height: 100%;
 }

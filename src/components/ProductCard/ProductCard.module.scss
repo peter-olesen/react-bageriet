@@ -6,21 +6,32 @@
   flex-direction: column;
   place-items: center;
   text-align: center;
+  cursor: pointer;
+
+  img {
+    width: 283px;
+    height: 219px;
+  }
+
+  .Comments {
+    margin-top: 0.3rem;
+
+    svg {
+      width: 19px;
+      height: 15px;
+    }
+  }
 
   h3 {
     @extend %OpenSansSemiBold;
     font-size: 18px;
+    margin: 0.3rem;
   }
 
   p {
     @extend %OpenSansLight;
     font-size: 14px;
     color: $Gray;
-  }
-
-  img {
-    width: 283px;
-    height: 219px;
   }
 
   button {
