@@ -1,9 +1,11 @@
 import ps from "../style/pages/Products.module.scss";
+import { useState } from "react";
 import { ProductCategories } from "../components/ProductCategories/ProductCategories";
 import { ProductsSection } from "../components/ProductsSection/ProductsSection";
 import { SectionHeader } from "../components/SectionHeader/SectionHeader";
 
 export const Products = () => {
+  const [id, setId] = useState(1);
   return (
     <>
       <SectionHeader>
@@ -15,8 +17,8 @@ export const Products = () => {
         </p>
       </SectionHeader>
       <div className={ps.Products}>
-        <ProductCategories />
-        <ProductsSection />
+        <ProductCategories setId={setId} />
+        <ProductsSection id={id} />
       </div>
     </>
   );

@@ -10,6 +10,10 @@ body {
   @extend %OpenSans;
   height: 100%;
   margin: 0;
+
+  button {
+    cursor: pointer;
+  }
 }
 
 #root {
@@ -17,4 +21,17 @@ body {
   flex-direction: column;
   width: 100%;
   min-height: 100%;
+
+  a {
+    text-decoration: none;
+
+    p,
+    span {
+      color: black;
+    }
+
+    h3 {
+      color: $FooterBG;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import pcs from "./ProductCardSection.module.scss";
 import { ProductCard } from "../ProductCard/ProductCard";
 
@@ -29,7 +30,7 @@ export const ProductCardSection = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
+  // console.log(products);
 
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
@@ -49,13 +50,14 @@ export const ProductCardSection = () => {
       <div className={pcs.ProductGrid}>
         {products?.map((item) => {
           return (
-            <ProductCard
-              key={item.title}
-              product={item.title}
-              comments={item.num_comments}
-              image={item.image.fullpath}
-              text={truncateText(item.teaser, 120)}
-            />
+            <NavLink key={item.title} to={`/produkt/${item.id}`}>
+              <ProductCard
+                product={item.title}
+                comments={item.num_comments}
+                image={item.image.fullpath}
+                text={truncateText(item.teaser, 120)}
+              />
+            </NavLink>
           );
         })}
       </div>

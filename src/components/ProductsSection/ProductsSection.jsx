@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { ProductCard } from "../ProductCard/ProductCard";
 import pcss from "./ProductsSection.module.scss";
 
-export const ProductsSection = () => {
-  const [products, setProducts] = useState(null);
+export const ProductsSection = ({ id }) => {
+  const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "https://api.mediehuset.net/bakeonline/products"
+          `https://api.mediehuset.net/bakeonline/categories/${id}`
         );
         if (!res.ok) {
           throw new Error("Could not fetch products");
@@ -18,18 +19,15 @@ export const ProductsSection = () => {
 
         const data = await res.json();
 
-        const mixedProducts = data.items
-          ? data.items.sort(() => Math.random() - 0.5).slice(0, 8)
-          : [];
-        setProducts(mixedProducts);
+        setProducts(data.item.products || []);
       } catch (err) {
         setError(err.message);
       }
     };
     fetchProducts();
-  }, []);
+  }, [id]);
 
-  console.log(products);
+  // console.log(products);
 
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
@@ -37,18 +35,20 @@ export const ProductsSection = () => {
     }
     return text;
   };
+
   return (
     <section className={pcss.ProductCardSection}>
       <div className={pcss.ProductGrid}>
         {products?.map((item) => {
           return (
-            <ProductCard
-              key={item.title}
-              product={item.title}
-              comments={item.num_comments}
-              image={item.image.fullpath}
-              text={truncateText(item.teaser, 120)}
-            />
+            <NavLink key={item.title} to={`/produkt/${item.id}`}>
+              <ProductCard
+                product={item.title}
+                comments={item.num_comments}
+                image={item.image.fullpath}
+                text={truncateText(item.teaser, 120)}
+              />
+            </NavLink>
           );
         })}
       </div>

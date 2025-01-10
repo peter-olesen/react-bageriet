@@ -1,24 +1,44 @@
-import { NavLink } from "react-router-dom";
 import pcs from "./ProductCategories.module.scss";
+import { useEffect, useState } from "react";
 
-export const ProductCategories = () => {
+// https://api.mediehuset.net/bakeonline/categories
+
+export const ProductCategories = ({ setId }) => {
+  const [categories, setCategories] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await fetch(
+          "https://api.mediehuset.net/bakeonline/categories"
+        );
+        if (!res.ok) {
+          throw new Error("Could not fetch categories");
+        }
+
+        const data = await res.json();
+        setCategories(data.items || []);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  //   console.log(categories);
+
   return (
-    <ul className={pcs.ProductCategories}>
-      <li>
-        <NavLink to="/produkter">Rundstykker</NavLink>
-      </li>
-      <li>
-        <NavLink to="/produkter">Baguettes</NavLink>
-      </li>
-      <li>
-        <NavLink to="/produkter">Franksbrød</NavLink>
-      </li>
-      <li>
-        <NavLink to="/produkter">Kager</NavLink>
-      </li>
-      <li>
-        <NavLink to="/produkter">Rugbrød</NavLink>
-      </li>
-    </ul>
+    <aside>
+      <ul className={pcs.ProductCategories}>
+        {categories?.map((item) => {
+          return (
+            <li onClick={() => setId(item.id)} key={item.id}>
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
+    </aside>
   );
 };

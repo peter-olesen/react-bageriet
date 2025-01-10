@@ -19,7 +19,6 @@
     .LeftArrow {
       background: transparent;
       border: none;
-      cursor: pointer;
 
       img {
         transform: rotate(180deg);
@@ -30,7 +29,6 @@
     .RightArrow {
       background: transparent;
       border: none;
-      cursor: pointer;
 
       img {
         filter: invert(100%);
@@ -53,7 +51,6 @@
       border: none;
       border-radius: 50%;
       margin: 0.5rem;
-      cursor: pointer;
     }
 
     .Dot {

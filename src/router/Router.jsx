@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Home } from "../pages/Home";
 import { Products } from "../pages/Products";
+import { Product } from "../pages/Product";
 import { Contact } from "../pages/Contact";
 import { Login } from "../pages/Login";
 import { PageNotFound } from "../pages/PageNotFound";
@@ -37,6 +38,7 @@ export const Router = () => {
 
       <Route element={<CollapsedLayout />}>
         <Route path={PATHS.produkter} element={<Products />} />
+        <Route path={PATHS.produkt} element={<Product />} />
         <Route path={PATHS.kontakt} element={<Contact />} />
         <Route path={PATHS.login} element={<Login />} />
 
