@@ -1,0 +1,13 @@
+@import "../variables";
+@import "../placeholders";
+
+.ProductSection {
+  max-width: 1200px;
+  img {
+    max-width: 200px;
+  }
+  button {
+    background: $White;
+    border: solid 1px $Black;
+  }
+}
