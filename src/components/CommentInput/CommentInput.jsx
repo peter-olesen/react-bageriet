@@ -57,7 +57,7 @@ export const CommentInput = ({ productId, num_comments, setCommentStatus }) => {
             id="comment"
             placeholder="Tilføj din kommentar...."
           />
-          <button onClick={() => submitComment()}>SEND</button>
+          <button onClick={submitComment}>SEND</button>
         </form>
       </div>
     </section>

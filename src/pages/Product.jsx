@@ -11,7 +11,7 @@ export const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { userData } = useContext(UserContext);
-  const { commentStatus, setCommentStatus } = useState();
+  const [commentStatus, setCommentStatus] = useState(null);
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(3);
   const [pageCount, setPageCount] = useState(1);
@@ -45,7 +45,7 @@ export const Product = () => {
 
   const commentData = useGet(
     `https://api.mediehuset.net/bakeonline/comments/${id}`,
-    userData.access_token,
+    userData?.access_token,
     commentStatus
   );
 
